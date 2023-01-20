@@ -1,6 +1,10 @@
+import 'package:bennett_chamberlain/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+
+import '../../views/about/about_view.dart';
+import '../../views/contact/contact_view.dart';
 
 class Navigation_bar extends StatelessWidget {
   const Navigation_bar({super.key});
@@ -27,11 +31,11 @@ class Navigation_bar extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _NavBarItem("Home"),
+              _NavBarItem("Home", HomeView()),
               SizedBox(width: 60),
-              _NavBarItem("About"),
+              _NavBarItem("About", AboutView()),
               SizedBox(width: 60),
-              _NavBarItem("Contact"),
+              _NavBarItem("Contact", ContactView()),
             ],
           )
         ],
@@ -42,10 +46,44 @@ class Navigation_bar extends StatelessWidget {
 
 class _NavBarItem extends StatelessWidget {
   final String title;
-  const _NavBarItem(this.title);
+  final Widget pageWidget;
+  const _NavBarItem(this.title, this.pageWidget);
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: TextStyle(fontSize: 20));
+    return TextButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return Color.fromARGB(255, 115, 16, 87).withOpacity(0.5);
+            }
+            return null; // Use the component's default.
+          },
+        ),
+      ),
+      onPressed: () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (context, animation, seconaryAnimation) => pageWidget,
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              var begin = Offset(300.0, 0.0);
+              var end = Offset.zero;
+              var curve = Curves.bounceIn;
+              var tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              return SlideTransition(
+                  position: animation.drive(tween), child: child);
+            },
+          ),
+        );
+      },
+      child: Text(
+        title,
+        style: TextStyle(color: Color.fromARGB(255, 115, 16, 87), fontSize: 20),
+      ),
+    );
   }
 }

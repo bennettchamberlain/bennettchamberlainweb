@@ -21,9 +21,18 @@ class Details extends StatelessWidget {
                   color: Color.fromARGB(255, 115, 16, 87),
                   fontWeight: FontWeight.w800),
             ),
+            SizedBox(height: 10),
+            Text(
+              "Flutter, Python, C++",
+              style: TextStyle(
+                  fontSize: 18,
+                  height: 0.9,
+                  color: Color.fromARGB(255, 115, 16, 87),
+                  fontWeight: FontWeight.w800),
+            ),
             SizedBox(height: 30),
             Text(
-              'This font can be utilized without purchasing any license for non-commercial projects. However, for any commercial purpose, you will have to purchase the license in order to use it legally. Just buy its license from any reliable source and start using it for all your commercial purposes.',
+              'Macroeconomics. Skiing. Music. Journaling. Billiards. Algorithmic Trading. Basketball. Guitar. Mountain Biking. Art. Golf. Hiking. Tennis. Surfing. Poker. Reading. Cooking. Yoga. French. Dancing.',
               style: TextStyle(
                   fontSize: 18, fontWeight: FontWeight.w500, height: 1.7),
             )
