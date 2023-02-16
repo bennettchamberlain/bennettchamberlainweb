@@ -6,6 +6,7 @@ void main() {
   runApp(const MyApp());
 }
 
+//need to add responsive view
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
