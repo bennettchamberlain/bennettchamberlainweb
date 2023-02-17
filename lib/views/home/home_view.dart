@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
             Navigation_bar(),
             Expanded(
               child: Row(
-                children: [
+                children: const [
                   Details(),
                   Expanded(
                     child: Center(

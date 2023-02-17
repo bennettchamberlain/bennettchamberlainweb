@@ -2,6 +2,8 @@ import 'package:bennett_chamberlain/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vrouter/vrouter.dart';
 
 import '../../views/about/about_view.dart';
 import '../../views/contact/contact_view.dart';
@@ -16,11 +18,11 @@ class Navigation_bar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 80,
             width: 150,
             child: Padding(
-              padding: const EdgeInsets.only(top: 25.0),
+              padding: EdgeInsets.only(top: 25.0),
               child: Text("BC",
                   style: TextStyle(
                       fontSize: 40,
@@ -30,12 +32,39 @@ class Navigation_bar extends StatelessWidget {
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              _NavBarItem("Home", HomeView()),
+            children: const [
+              _NavBarItem(
+                  Text(
+                    "Home",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 115, 16, 87), fontSize: 20),
+                  ),
+                  '/'),
               SizedBox(width: 60),
-              _NavBarItem("About", AboutView()),
+              _NavBarItem(
+                  Text(
+                    "About",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 115, 16, 87), fontSize: 20),
+                  ),
+                  '/about'),
               SizedBox(width: 60),
-              _NavBarItem("Contact", ContactView()),
+              _NavBarItem(
+                  Text(
+                    "Contact",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 115, 16, 87), fontSize: 20),
+                  ),
+                  '/contact'),
+              SizedBox(
+                width: 50,
+              ),
+              _NavBarItem(
+                  FaIcon(
+                    FontAwesomeIcons.user,
+                    color: Color.fromARGB(255, 115, 16, 87),
+                  ),
+                  '/login')
             ],
           )
         ],
@@ -45,9 +74,9 @@ class Navigation_bar extends StatelessWidget {
 }
 
 class _NavBarItem extends StatelessWidget {
-  final String title;
-  final Widget pageWidget;
-  const _NavBarItem(this.title, this.pageWidget);
+  final Widget title;
+  final String pageUrl;
+  const _NavBarItem(this.title, this.pageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -63,27 +92,25 @@ class _NavBarItem extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation, seconaryAnimation) => pageWidget,
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              var begin = Offset(300.0, 0.0);
-              var end = Offset.zero;
-              var curve = Curves.bounceIn;
-              var tween =
-                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-              return SlideTransition(
-                  position: animation.drive(tween), child: child);
-            },
-          ),
-        );
+        context.vRouter.to('$pageUrl');
+        // Navigator.push(
+        //   context,
+        //   PageRouteBuilder(
+        //     pageBuilder: (context, animation, seconaryAnimation) => pageWidget,
+        //     transitionsBuilder:
+        //         (context, animation, secondaryAnimation, child) {
+        //       var begin = Offset(300.0, 0.0);
+        //       var end = Offset.zero;
+        //       var curve = Curves.bounceIn;
+        //       var tween =
+        //           Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        //       return SlideTransition(
+        //           position: animation.drive(tween), child: child);
+        //     },
+        //   ),
+        // );
       },
-      child: Text(
-        title,
-        style: TextStyle(color: Color.fromARGB(255, 115, 16, 87), fontSize: 20),
-      ),
+      child: this.title,
     );
   }
 }

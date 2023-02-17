@@ -10,16 +10,21 @@ class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green[50],
-        body: CenteredView(
-          child: Column(
-            children: [
-              Navigation_bar(),
-              Row(
-                children: [],
-              )
-            ],
-          ),
-        ));
+      backgroundColor: Colors.green[50],
+      body: CenteredView(
+        child: Column(
+          children: [
+            Navigation_bar(),
+            SizedBox(height: 30),
+            Container(
+              child: Text(
+                "what can I say, I'm an open book man, its pretty cool. This is the about page",
+                style: TextStyle(fontSize: 40),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
