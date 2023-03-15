@@ -15,7 +15,7 @@ class cta extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: () {
-          context.vRouter.to('/about');
+          context.vRouter.to('/contact');
           // Navigator.push(
           //   context,
           //   PageRouteBuilder(

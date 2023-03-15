@@ -15,19 +15,20 @@ class Socials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _SocialBox(
-          "Instagram",
+          " Instagram",
           'https://www.instagram.com/bennett.chamberlain/',
           FaIcon(FontAwesomeIcons.instagram),
         ),
         _SocialBox(
-          "Twitter",
+          " Twitter",
           'https://mobile.twitter.com/ogwithsomepulp',
           FaIcon(FontAwesomeIcons.twitter),
         ),
         _SocialBox(
-          "LinkedIn",
+          " LinkedIn",
           'https://www.linkedin.com/in/bennett-chamberlain-300624143/',
           FaIcon(FontAwesomeIcons.linkedin),
         ),
