@@ -15,22 +15,25 @@ class Socials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _SocialBox(
           " Instagram",
           'https://www.instagram.com/bennett.chamberlain/',
-          FaIcon(FontAwesomeIcons.instagram),
+          FaIcon(FontAwesomeIcons.instagram,
+              color: Color.fromARGB(255, 115, 16, 87)),
         ),
         _SocialBox(
           " Twitter",
           'https://mobile.twitter.com/ogwithsomepulp',
-          FaIcon(FontAwesomeIcons.twitter),
+          FaIcon(FontAwesomeIcons.twitter,
+              color: Color.fromARGB(255, 115, 16, 87)),
         ),
         _SocialBox(
           " LinkedIn",
           'https://www.linkedin.com/in/bennett-chamberlain-300624143/',
-          FaIcon(FontAwesomeIcons.linkedin),
+          FaIcon(FontAwesomeIcons.linkedin,
+              color: Color.fromARGB(255, 115, 16, 87)),
         ),
       ],
     );
@@ -62,7 +65,8 @@ class _SocialBox extends StatelessWidget {
               ),
               child: icon,
             ),
-            Text(title)
+            Text(title,
+                style: TextStyle(color: Color.fromARGB(255, 115, 16, 87)))
           ],
         ));
   }
