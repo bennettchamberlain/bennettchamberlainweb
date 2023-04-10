@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "bennett_chamberlain" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "bennett_chamberlain" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "bennett_chamberlain.exe" "\0"
             VALUE "ProductName", "bennett_chamberlain" "\0"
+=======
+            VALUE "FileDescription", "bc_website" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "bc_website" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "bc_website.exe" "\0"
+            VALUE "ProductName", "bc_website" "\0"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

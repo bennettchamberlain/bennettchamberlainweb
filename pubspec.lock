@@ -80,6 +80,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -88,6 +89,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.3.0"
+=======
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   js:
     dependency: transitive
     description:
@@ -148,10 +151,17 @@ packages:
     dependency: transitive
     description:
       name: plugin_platform_interface
+<<<<<<< HEAD
       sha256: dbf0f707c78beedc9200146ad3cb0ab4d5da13c246336987be6940f026500d3a
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+=======
+      sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.4"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   sky_engine:
     dependency: transitive
     description: flutter
@@ -206,6 +216,7 @@ packages:
     source: hosted
     version: "0.4.16"
   url_launcher:
+<<<<<<< HEAD
     dependency: "direct main"
     description:
       name: url_launcher
@@ -213,62 +224,120 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.7"
+=======
+    dependency: transitive
+    description:
+      name: url_launcher
+      sha256: "75f2846facd11168d007529d6cd8fcb2b750186bea046af9711f10b907e1587e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.10"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_android:
     dependency: transitive
     description:
       name: url_launcher_android
+<<<<<<< HEAD
       sha256: "6f91d30ce9060c204b2dbe728adb300750fa4b228e8f7ed1b961aa1ceb728799"
       url: "https://pub.dev"
     source: hosted
     version: "6.0.22"
+=======
+      sha256: dd729390aa936bf1bdf5cd1bc7468ff340263f80a2c4f569416507667de8e3c8
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.26"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_ios:
     dependency: transitive
     description:
       name: url_launcher_ios
+<<<<<<< HEAD
       sha256: "6ba7dddee26c9fae27c9203c424631109d73c8fa26cfa7bc3e35e751cb87f62e"
       url: "https://pub.dev"
     source: hosted
     version: "6.0.17"
+=======
+      sha256: "3dedc66ca3c0bef9e6a93c0999aee102556a450afcc1b7bcfeace7a424927d92"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.3"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_linux:
     dependency: transitive
     description:
       name: url_launcher_linux
+<<<<<<< HEAD
       sha256: "360fa359ab06bcb4f7c5cd3123a2a9a4d3364d4575d27c4b33468bd4497dd094"
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+=======
+      sha256: "206fb8334a700ef7754d6a9ed119e7349bc830448098f21a69bf1b4ed038cabc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.4"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_macos:
     dependency: transitive
     description:
       name: url_launcher_macos
+<<<<<<< HEAD
       sha256: a9b3ea9043eabfaadfa3fb89de67a11210d85569086d22b3854484beab8b3978
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+=======
+      sha256: "0ef2b4f97942a16523e51256b799e9aa1843da6c60c55eefbfa9dbc2dcb8331a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.4"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_platform_interface:
     dependency: transitive
     description:
       name: url_launcher_platform_interface
+<<<<<<< HEAD
       sha256: "4eae912628763eb48fc214522e58e942fd16ce195407dbf45638239523c759a6"
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+=======
+      sha256: "6c9ca697a5ae218ce56cece69d46128169a58aa8653c1b01d26fcd4aad8c4370"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_web:
     dependency: transitive
     description:
       name: url_launcher_web
+<<<<<<< HEAD
       sha256: "5669882643b96bb6d5786637cac727c6e918a790053b09245fd4513b8a07df2a"
       url: "https://pub.dev"
     source: hosted
     version: "2.0.13"
+=======
+      sha256: "81fe91b6c4f84f222d186a9d23c73157dc4c8e1c71489c4d08be1ad3b228f1aa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.16"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_launcher_windows:
     dependency: transitive
     description:
       name: url_launcher_windows
+<<<<<<< HEAD
       sha256: e3c3b16d3104260c10eea3b0e34272aaa57921f83148b0619f74c2eced9b7ef1
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+=======
+      sha256: a83ba3607a507758669cfafb03f9de09bf6e6280c14d9b9cb18f013e406dcacd
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   url_strategy:
     dependency: transitive
     description:
@@ -294,5 +363,10 @@ packages:
     source: hosted
     version: "1.2.1"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.18.6 <3.0.0"
   flutter: ">=2.10.0"
+=======
+  dart: ">=2.19.4 <3.0.0"
+  flutter: ">=3.3.0"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)

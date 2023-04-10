@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "bennett_chamberlain",
     "short_name": "bennett_chamberlain",
+=======
+    "name": "bc_website",
+    "short_name": "bc_website",
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -26,6 +26,14 @@ bool FlutterWindow::OnCreate() {
   }
   RegisterPlugins(flutter_controller_->engine());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
+<<<<<<< HEAD
+=======
+
+  flutter_controller_->engine()->SetNextFrameCallback([&]() {
+    this->Show();
+  });
+
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   return true;
 }
 

@@ -1,7 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="com.example.bennett_chamberlain">
    <application
         android:label="bennett_chamberlain"
+=======
+    package="com.example.bc_website">
+   <application
+        android:label="bc_website"
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

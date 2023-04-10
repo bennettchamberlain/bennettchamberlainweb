@@ -1,13 +1,39 @@
 #include "win32_window.h"
 
+<<<<<<< HEAD
+=======
+#include <dwmapi.h>
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 #include <flutter_windows.h>
 
 #include "resource.h"
 
 namespace {
 
+<<<<<<< HEAD
 constexpr const wchar_t kWindowClassName[] = L"FLUTTER_RUNNER_WIN32_WINDOW";
 
+=======
+/// Window attribute that enables dark mode window decorations.
+///
+/// Redefined in case the developer's machine has a Windows SDK older than
+/// version 10.0.22000.0.
+/// See: https://docs.microsoft.com/windows/win32/api/dwmapi/ne-dwmapi-dwmwindowattribute
+#ifndef DWMWA_USE_IMMERSIVE_DARK_MODE
+#define DWMWA_USE_IMMERSIVE_DARK_MODE 20
+#endif
+
+constexpr const wchar_t kWindowClassName[] = L"FLUTTER_RUNNER_WIN32_WINDOW";
+
+/// Registry key for app theme preference.
+///
+/// A value of 0 indicates apps should use dark mode. A non-zero or missing
+/// value indicates apps should use light mode.
+constexpr const wchar_t kGetPreferredBrightnessRegKey[] =
+  L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
+constexpr const wchar_t kGetPreferredBrightnessRegValue[] = L"AppsUseLightTheme";
+
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 // The number of Win32Window objects that currently exist.
 static int g_active_window_count = 0;
 
@@ -31,8 +57,13 @@ void EnableFullDpiSupportIfAvailable(HWND hwnd) {
           GetProcAddress(user32_module, "EnableNonClientDpiScaling"));
   if (enable_non_client_dpi_scaling != nullptr) {
     enable_non_client_dpi_scaling(hwnd);
+<<<<<<< HEAD
     FreeLibrary(user32_module);
   }
+=======
+  }
+  FreeLibrary(user32_module);
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 }
 
 }  // namespace
@@ -102,9 +133,15 @@ Win32Window::~Win32Window() {
   Destroy();
 }
 
+<<<<<<< HEAD
 bool Win32Window::CreateAndShow(const std::wstring& title,
                                 const Point& origin,
                                 const Size& size) {
+=======
+bool Win32Window::Create(const std::wstring& title,
+                         const Point& origin,
+                         const Size& size) {
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   Destroy();
 
   const wchar_t* window_class =
@@ -117,7 +154,11 @@ bool Win32Window::CreateAndShow(const std::wstring& title,
   double scale_factor = dpi / 96.0;
 
   HWND window = CreateWindow(
+<<<<<<< HEAD
       window_class, title.c_str(), WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+=======
+      window_class, title.c_str(), WS_OVERLAPPEDWINDOW,
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
       Scale(origin.x, scale_factor), Scale(origin.y, scale_factor),
       Scale(size.width, scale_factor), Scale(size.height, scale_factor),
       nullptr, nullptr, GetModuleHandle(nullptr), this);
@@ -126,9 +167,21 @@ bool Win32Window::CreateAndShow(const std::wstring& title,
     return false;
   }
 
+<<<<<<< HEAD
   return OnCreate();
 }
 
+=======
+  UpdateTheme(window);
+
+  return OnCreate();
+}
+
+bool Win32Window::Show() {
+  return ShowWindow(window_handle_, SW_SHOWNORMAL);
+}
+
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 // static
 LRESULT CALLBACK Win32Window::WndProc(HWND const window,
                                       UINT const message,
@@ -188,6 +241,13 @@ Win32Window::MessageHandler(HWND hwnd,
         SetFocus(child_content_);
       }
       return 0;
+<<<<<<< HEAD
+=======
+
+    case WM_DWMCOLORIZATIONCOLORCHANGED:
+      UpdateTheme(hwnd);
+      return 0;
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
   }
 
   return DefWindowProc(window_handle_, message, wparam, lparam);
@@ -243,3 +303,21 @@ bool Win32Window::OnCreate() {
 void Win32Window::OnDestroy() {
   // No-op; provided for subclasses.
 }
+<<<<<<< HEAD
+=======
+
+void Win32Window::UpdateTheme(HWND const window) {
+  DWORD light_mode;
+  DWORD light_mode_size = sizeof(light_mode);
+  LSTATUS result = RegGetValue(HKEY_CURRENT_USER, kGetPreferredBrightnessRegKey,
+                               kGetPreferredBrightnessRegValue,
+                               RRF_RT_REG_DWORD, nullptr, &light_mode,
+                               &light_mode_size);
+
+  if (result == ERROR_SUCCESS) {
+    BOOL enable_dark_mode = light_mode == 0;
+    DwmSetWindowAttribute(window, DWMWA_USE_IMMERSIVE_DARK_MODE,
+                          &enable_dark_mode, sizeof(enable_dark_mode));
+  }
+}
+>>>>>>> fdf05d7 (new version with ghetto gastro design)

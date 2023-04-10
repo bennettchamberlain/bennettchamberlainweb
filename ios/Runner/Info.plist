@@ -5,7 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
+<<<<<<< HEAD
 	<string>Bennett Chamberlain</string>
+=======
+	<string>Bc Website</string>
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +17,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>bennett_chamberlain</string>
+=======
+	<string>bc_website</string>
+>>>>>>> fdf05d7 (new version with ghetto gastro design)
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
